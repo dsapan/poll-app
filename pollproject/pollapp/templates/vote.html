@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block title  %} Vote Page {% endblock %}
+
+{% block content %}
+<h1> Caste Your Vote  </h1>
+<form method="POST" action="{% url 'vote' id=data.id %}" >
+{% csrf_token %}
+<input type='radio'name="r1" value='op1' required  >{{ data.op1 }} <br> <br>
+<input type='radio'name="r1" value='op2' required  >{{ data.op2 }} <br> <br>
+<input type='radio'name="r1" value='op3' required  >{{ data.op3 }} <br> <br>
+<input type="submit" >
+
+
+</form>
+{{ msg }}
+{% endblock %}
